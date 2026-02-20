@@ -1,0 +1,8 @@
+- name: Install and configure httpd on all servers
+  hosts: all  
+  gather_facts: no  # set to yes so we can use ansible facts like ansible_hostname
+  become: true  
+  vars_files:
+    - vars.yaml  # This file will be referenced in the playbook
+  roles:
+    - httpd
